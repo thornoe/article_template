@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\input{preample/packages}
+\input{preample/citations}
+\input{preample/hyperlinks}
+\input{preample/notes}
+\input{preample/ref_commands}
+\input{preample/title_page}
+% \addbibresource{.bib}
+
+%---------------------------------------------------------------
+%-------- TITLE PAGE AND TABLE OF CONTENTS ---------------------
+%---------------------------------------------------------------
+\begin{document}
+\begin{titlingpage}
+    \maketitle
+    \input{sections/abstract}
+    \tableofcontents
+\end{titlingpage}
+
+%---------------------------------------------------------------
+%-------- SECTIONS ---------------------------------------------
+%---------------------------------------------------------------
+\input{sections/intro}
+% \clearpage
+% \input{sections/data}
+% % \clearpage
+% \input{sections/model}
+% % \clearpage
+% \input{sections/results}
+% % \clearpage
+% \input{sections/discussion}
+% % \clearpage
+% \input{sections/conclusion}
+% % \clearpage
+% \printbibliography
+
+%---------------------------------------------------------------
+%-------- APPENDIX ---------------------------------------------
+%---------------------------------------------------------------
+\clearpage
+\appendix
+\setcounter{page}{1}\pagenumbering{roman} % page numbering i, ii, iii, iv...
+\renewcommand{\theequation}{\thesection.\arabic{equation}} % add appendix letter to equation numbering
+\input{sections/appendix}
+
+\end{document}
