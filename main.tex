@@ -5,7 +5,7 @@
 \input{preample/notes}
 \input{preample/ref_commands}
 \input{preample/title_page}
-% \addbibresource{.bib}
+\addbibresource{bibliography.bib}
 
 %---------------------------------------------------------------
 %-------- TITLE PAGE AND TABLE OF CONTENTS ---------------------
@@ -35,7 +35,7 @@
 % % \clearpage
 % \input{sections/conclusion}
 % % \clearpage
-% \printbibliography
+% \printbibliography % 
 
 %---------------------------------------------------------------
 %-------- APPENDIX ---------------------------------------------
@@ -44,6 +44,7 @@
 \appendix
 \setcounter{page}{1}\pagenumbering{roman} % page numbering i, ii, iii, iv...
 \renewcommand{\theequation}{\thesection.\arabic{equation}} % add appendix letter to equation numbering
+
 \input{sections/appendix}
 
 \end{document}
