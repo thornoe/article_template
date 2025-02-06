@@ -1,0 +1,25 @@
+% PAGE LAYOUT
+\usepackage{fancyhdr} % add fancyhdr package for page headers
+\usepackage[margin=20mm, top=25mm, bottom=20mm]{geometry} % set margins
+% \usepackage{lscape} % rotate page page content
+% \usepackage{pdflscape} % display page as landscape
+
+% Set fancy page style
+\pagestyle{fancy}
+\fancyhf{}
+
+% Add page numbers
+\fancyfoot[LE,RO]{\thepage} % page number on left-side and right-side footers
+
+% Configure headers
+\fancyhead[LE]{\leftmark}  % section title on left-side pages
+\fancyhead[RO]{\rightmark} % subsection title on right-side pages
+
+% Ensure chapter and section titles are updated in the headers
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\ #1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+% Specify top margin ≥ 14.5 to avoid fancyhdr warning
+\setlength{\headheight}{14.5pt} % vertical space allocated for the header
+\addtolength{\topmargin}{2.5pt} % increase the top margin to move the header lower
+\setlength{\headsep}{20pt}      % space between the header and the main text
