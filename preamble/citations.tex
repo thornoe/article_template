@@ -3,11 +3,11 @@
   style=authoryear-comp, % compact variant of authoryear style
   natbib=true, % natbib commands gking.harvard.edu/files/natnotes2.pdf
   sorting=nyt, % sort bibliography by name, year, title
-  maxbibnames=7, % threshold for truncating in bibliography
+  maxbibnames=10, % threshold for truncating in bibliography
   maxcitenames=2, % threshold for truncating in citations
   date=year, % format of printed date in bibliography
   isbn=false % whether isbn/issn/isrn are printed
-]{biblatex}
+]{biblatex} % see "3. User Guide": https://mirrors.dotsrc.org/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf
 
 \renewbibmacro*{note+pages}{ % suppress pages in bibliography
   \printfield{note}
@@ -18,3 +18,6 @@
   %     \enquote{\textit{You know nothing, Jon Snow}}\\
   %     \null\hfill - Ygritte
   % \end{quote}
+
+  % Load bibliography (Better BibTeX export from Zotero)
+\addbibresource{bibliography.bib}
