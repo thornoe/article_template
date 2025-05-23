@@ -1,14 +1,23 @@
-% Create space for \todo{} notes
-\setlength{\marginparwidth}{1.5cm}
+% Load packages
+\usepackage{marginnote} % \marginnote{} w/o  orange text box
+\usepackage{todonotes} % \todo{}, \todo[inline]{}, \todos
+% \usepackage[disable]{todonotes} % hide to-do notes
 
-% Select what to do with command \marginnote{}:
-\usepackage{marginnote}                               % use marginnotes
-% \renewcommand{\marginnote}[1]{}                       % hide marginnotes
+% Define new command \note{} for inline note compatible with align
+\newcommand{\note}[1]{{\color{blue}#1}} % display blue notes
+% \newcommand{\note}[1]{} % hide blue notes
 
-% Select what to do with command \note{}
-\newcommand{\note}[1]{\textcolor{blue}{\textbf{#1}}}  % use notes
-% \newcommand{\note}[1]{}                               % hide notes
+% Define new command \tinymarginnote{} as a tiny version of \marginnote{}
+\newcommand{\tinymarginnote}[2][]{\marginnote[#1]{\begin{spacing}{0.5}\footnotesize#2\end{spacing}}} % display tiny margin notes
+% \newcommand{\tinymarginnote}[1]{} % hide tiny margin notes
 
-% Select what to do with commands \todo{} and \todo[inline]{}
-\usepackage[draft]{todonotes}                         % use todonotes
-% \usepackage[disable]{todonotes}                       % hide todonotes
+% Define new command \tinytodo{} as a tiny version of \todo{}
+\newcommand{\tinytodo}[2][]{\todo[caption={#2}, size=\footnotesize, #1]{\begin{spacing}{0.5}#2\end{spacing}}} % display tiny to-do notes
+% \newcommand{\tinytodo}[1]{} % hide tiny to-do notes
+
+% Set width of notes in the margin
+\setlength{\marginparwidth}{1.5cm} % for \marginnote{}
+% \setlength{\marginparwidth}{1.7cm} % for \todo{}
+
+% Move \todo{} from right margin to left margin for single-sided documents or from outside to inside margin for \documentclass[twoside]
+% \reversemarginpar % disables \marginnote{}
